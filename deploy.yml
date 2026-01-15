@@ -1,20 +1,25 @@
 # .github/workflows/deploy.yml
 
-name: Deploy Next.js site to Pages
+name: Deploy Next.js to GitHub Pages
 
 on:
-  # ทำงานเมื่อมีการ push code ไปยัง branch `main`
+  # Runs on pushes targeting the `main` branch
   push:
     branches: ["main"]
 
-  # อนุญาตให้รัน workflow นี้ได้เองจากแท็บ Actions
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# ตั้งค่า permission ของ GITHUB_TOKEN เพื่อให้สามารถ deploy ไปยัง GitHub Pages ได้
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Allow only one concurrent deployment, do not cancel in-progress runs.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
