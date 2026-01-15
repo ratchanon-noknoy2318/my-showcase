@@ -1,0 +1,23 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #333333;
+  --accent-color: #000000;
+  --text-color: #1a1a1a;
+  --bg-color: #e0e0e0;
+}
+
+body {
+  font-family: var(--font-body), 'Times New Roman', Times, serif;
+  line-height: 1.45;
+  word-spacing: -0.02em;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 20px;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 5px;
+  }
+}
